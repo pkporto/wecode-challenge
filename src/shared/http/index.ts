@@ -43,6 +43,6 @@ app.use(
         });
     },
 );
-app.listen(PORT,()  => {
+app.listen(process.env.PORT || PORT,()  => {
     console.log(`App rodando na porta ${PORT}`);
 });
