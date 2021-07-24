@@ -13,7 +13,7 @@ export class AddMovieController {
 
             return res.status(201).json({
                 status: 201,
-                message: 'Usuário cadastrado com sucesso.',
+                message: 'Filme cadastrado com sucesso.',
             });
         
         }
