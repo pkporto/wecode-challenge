@@ -25,6 +25,17 @@ export class MovieRepository implements IMovieRepository {
         }
     }
 
+    async findById(id: number): Promise<Movie | undefined> {
+        try {
+            const user = await getRepository(Movie).findOne({
+                where: { id },
+            });
+            return user;
+        } catch (error) {
+            return error.message;
+        }
+    }
+
     async getAllMovies(): Promise<Movie[]>{
         try {
             const movies = await getRepository(Movie).find(

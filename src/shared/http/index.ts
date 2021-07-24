@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 import '../typeorm';
-import express from 'express';
+import express, { NextFunction, Request, Response } from 'express';
 import cors from 'cors';
 import 'express-async-errors';
 
@@ -18,6 +18,31 @@ app.use(express.json());
 app.use(moviesRoutes);
 app.use(usersRoutes);
 
+
+app.use(
+    (
+        error: Error,
+        request: Request,
+        response: Response,
+        next: NextFunction,
+    ) => {
+        if (error instanceof AppError) {
+            console.log('App Error');
+             console.log(error);
+            return response.status(error.statusCode).json({
+                status: error.statusCode,
+                message: error.message,
+            });
+        }
+
+        console.log(error);
+
+        return response.status(500).json({
+            status: 'error',
+            message: 'Internal server error',
+        });
+    },
+);
 app.listen(PORT,()  => {
     console.log(`App rodando na porta ${PORT}`);
 });
