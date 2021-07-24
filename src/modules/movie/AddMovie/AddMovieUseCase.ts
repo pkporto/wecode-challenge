@@ -1,5 +1,5 @@
 import { getCustomRepository } from 'typeorm';
-import { Movie } from '../infra/typeorm/entities/Movie';
+import { Movie } from '../infra/typeorm/entities/Movie.entity';
 import { MovieRepository } from '../domain/repositories/MovieRepository';
 import { IAddMovie } from './AddMovieDTO';
 

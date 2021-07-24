@@ -1,22 +1,22 @@
 import { EntityRepository, getRepository } from 'typeorm';
-import { Movie } from '../../infra/typeorm/entities/Movie.entity';
-import { IMovieRepository } from '../models/IMovieRepository';
+import { User } from '../../infra/typeorm/entities/User.entity';
+import { IUserRepository } from '../models/IUserRepository';
 
 
-@EntityRepository(Movie)
-export class MovieRepository implements IMovieRepository {
+@EntityRepository(User)
+export class UserRepository implements IUserRepository {
 
-    async save(movie: Movie) {
+    async save(user: User) {
         try {
-            await getRepository(Movie).save(movie);
+            await getRepository(User).save(user);
         } catch (error) {
             throw new Error(error.message);
         }
     }
 
-    async findByName(name: string): Promise<Movie | undefined> {
+    async findByName(name: string): Promise<User | undefined> {
         try {
-            const user = await getRepository(Movie).findOne({
+            const user = await getRepository(User).findOne({
                 where: { name },
             });
             return user;
@@ -25,16 +25,16 @@ export class MovieRepository implements IMovieRepository {
         }
     }
 
-    async getAllMovies(): Promise<Movie[]>{
+    async getAllUsers(): Promise<User[]>{
         try {
-            const movies = await getRepository(Movie).find(
+            const users = await getRepository(User).find(
                 {
                     order:{
                         id: 'ASC',
                     }
                 }
             );
-            return movies;
+            return users;
         } catch (error) {
             return error.message;
         }
