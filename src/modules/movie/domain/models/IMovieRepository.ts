@@ -1,4 +1,4 @@
-import { Movie } from '@modules/movie/infra/typeorm/entities/Movie.entity';
+import { Movie } from '../../infra/typeorm/entities/Movie.entity';
 
 export interface IMovieRepository {
     findByName(name: string): Promise<Movie | undefined>;

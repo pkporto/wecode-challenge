@@ -1,4 +1,4 @@
-import { User } from '@modules/user/infra/typeorm/entities/User.entity';
+import { User } from '../../infra/typeorm/entities/User.entity';
 
 export interface IUserRepository {
     findByName(name: string): Promise<User | undefined>;

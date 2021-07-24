@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import { addUserController } from '@modules/user/AddUser/AddUserIndex';
-import { getAllUsersController } from '@modules/user/GetAllUsers/GetAllUsersIndex';
+import { addUserController } from '../../AddUser/AddUserIndex';
+import { getAllUsersController } from '../../GetAllUsers/GetAllUsersIndex';
 
 const usersRoutes = Router();
 

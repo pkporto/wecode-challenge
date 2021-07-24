@@ -4,10 +4,10 @@ import express, { NextFunction, Request, Response } from 'express';
 import cors from 'cors';
 import 'express-async-errors';
 
-import AppError from '@shared/helpers/AppError';
+import AppError from '../../shared/helpers/AppError';
 
-import { moviesRoutes } from '@modules/movie/infra/http/MoviesRoutes';
-import { usersRoutes } from '@modules/user/infra/http/UsersRoutes';
+import { moviesRoutes } from '../../modules/movie/infra/http/MoviesRoutes';
+import { usersRoutes } from '../../modules/user/infra/http/UsersRoutes';
 
 const app = express();
 const PORT = 9991;

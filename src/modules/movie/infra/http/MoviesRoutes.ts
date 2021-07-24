@@ -1,7 +1,7 @@
 import { Router } from 'express';
-import { addMovieController } from '@modules/movie/AddMovie/AddMovieIndex';
-import { getAllMoviesController } from '@modules/movie/GetAllMovies/GetAllMoviesIndex';
-import { addWatcherController} from '@modules/movie/AddWatcher/AddWatcherIndex';
+import { addMovieController } from '../../AddMovie/AddMovieIndex';
+import { getAllMoviesController } from '../../GetAllMovies/GetAllMoviesIndex';
+import { addWatcherController} from '../../AddWatcher/AddWatcherIndex';
 
 const moviesRoutes = Router();
 

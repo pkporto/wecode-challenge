@@ -4,15 +4,15 @@
     "port": 5432,
     "username": "postgres",
     "password": "root",
-    "database": "api-magazan-lider",
+    "database": "wedecode",
     "synchronize": false,
     "entities": [
-        "./src/app/entities/*.ts"
+        "./build/modules/**/infra/typeorm/entities/*.entity.{ts,js}"
     ],
     "migrations": [
-        "./src/database/migrations/*.ts"
+        "./build/config/database/migrations/*.{ts,js}"
     ],
     "cli": {
-        "migrationsDir": "./src/database/migrations"
+        "migrationsDir": "./build/config/database/migrations"
     }
 }

@@ -1,9 +1,9 @@
 import { getCustomRepository } from 'typeorm';
 import { Movie } from '../infra/typeorm/entities/Movie.entity';
 import { MovieRepository } from '../domain/repositories/MovieRepository';
-import { UserRepository } from '@modules/user/domain/repositories/UserRepository';
+import { UserRepository } from '../../user/domain/repositories/UserRepository';
 import { IAddWatcher } from './AddWatcherDTO';
-import AppError from '@shared/helpers/AppError';
+import AppError from '../../../shared/helpers/AppError';
 
 export class AddWatcherUseCase {
     async execute(data: IAddWatcher) {

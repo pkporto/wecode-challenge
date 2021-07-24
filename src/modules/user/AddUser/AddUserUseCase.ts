@@ -2,7 +2,7 @@ import { getCustomRepository } from 'typeorm';
 import { User } from '../infra/typeorm/entities/User.entity';
 import { UserRepository } from '../domain/repositories/UserRepository';
 import { IAddUser } from './AddUserDTO';
-import AppError from '@shared/helpers/AppError';
+import AppError from '../../../shared/helpers/AppError';
 
 export class AddUserUseCase {
     async execute(data: IAddUser) {
