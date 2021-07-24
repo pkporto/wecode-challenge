@@ -10,13 +10,10 @@
         "alwaysStrict": true,
         "esModuleInterop": true,
         "resolveJsonModule": true,
-        "skipLibCheck": true
+        "skipLibCheck": true,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
     },
-    "include": [
-        "lib/**/*",
-        "bin/*",
-        "tests/*.test.*"
-    ],
     "exclude": [
         "node_modules",
     ]
