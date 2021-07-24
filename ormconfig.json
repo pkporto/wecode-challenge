@@ -1,10 +1,11 @@
 {
     "type": "postgres",
-    "host": "localhost",
+    "host": "ec2-54-147-93-73.compute-1.amazonaws.com",
     "port": 5432,
-    "username": "postgres",
-    "password": "root",
-    "database": "wedecode",
+    "username": "qkdfxnxzhtjibn",
+    "password": "06306491dddbf55eef49492e6ef873d2f5b9315b7832857ba276cc81cc9bd128",
+    "database": "dthiq38j6bdfl",
+    "url": "postgres://qkdfxnxzhtjibn:06306491dddbf55eef49492e6ef873d2f5b9315b7832857ba276cc81cc9bd128@ec2-54-147-93-73.compute-1.amazonaws.com:5432/dthiq38j6bdfl",
     "synchronize": false,
     "entities": [
         "./build/modules/**/infra/typeorm/entities/*.entity.{ts,js}"
@@ -14,5 +15,8 @@
     ],
     "cli": {
         "migrationsDir": "./build/config/database/migrations"
-    }
+    },
+    "ssl": {
+        "rejectUnauthorized": false
+      }
 }
