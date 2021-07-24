@@ -6,20 +6,16 @@ export class AddWatcherController {
 
     async handle(req: Request, res: Response): Promise<Response> {
         const { user_id, movie_id} = req.body;
-        // try {
+      
             await this.AddWatcherUseCase.execute({
                 user_id,
                 movie_id
             });
-
+            //it will only return if everything is ok    
             return res.status(201).json({
                 status: 201,
-                message: 'Visualização cadastrada com sucesso..',
+                message: 'Visualização cadastrada com sucesso.',
             });
-        // } catch (error) {
-        //     return res.status(400).json({
-        //         message: error.message || 'Erro desconhecido.',
-        //     });
-        // }
+       
     }
 }

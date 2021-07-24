@@ -9,7 +9,6 @@ export class GetAllMoviesUseCase {
         );
 
         const result = await moviesRepository.getAllMovies();
-                console.log(result);
         return result;
     }
 }

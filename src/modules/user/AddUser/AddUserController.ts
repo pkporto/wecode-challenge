@@ -6,7 +6,7 @@ export class AddUserController {
 
     async handle(req: Request, res: Response): Promise<Response> {
         const { name } = req.body;
-        try {
+       
             await this.AddUserUseCase.execute({
                 name
             });
@@ -15,10 +15,6 @@ export class AddUserController {
                 status: 201,
                 message: 'Usuário cadastrado com sucesso.',
             });
-        } catch (error) {
-            return res.status(400).json({
-                message: error.message || 'Erro desconhecido.',
-            });
-        }
+       
     }
 }

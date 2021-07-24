@@ -6,7 +6,6 @@ export class AddMovieController {
 
     async handle(req: Request, res: Response): Promise<Response> {
         const { name, genre} = req.body;
-        try {
             await this.AddMovieUseCase.execute({
                 name,
                 genre
@@ -16,10 +15,6 @@ export class AddMovieController {
                 status: 201,
                 message: 'Usuário cadastrado com sucesso.',
             });
-        } catch (error) {
-            return res.status(400).json({
-                message: error.message || 'Erro desconhecido.',
-            });
+        
         }
-    }
 }
